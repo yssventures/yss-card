@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shreyash Lokhande · YSS Ventures</title>
+<meta name="description" content="YSS Ventures builds automation around how your business actually works. Save Shreyash's contact, or send us one task your team does by hand.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Shreyash Lokhande · YSS Ventures">
+<meta property="og:description" content="Automation built around how your business actually works.">
+<meta property="og:url" content="https://yssventures.com/card">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='700' font-size='15' fill='%23fff'%3EY%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/*
+ * yssventures.com/card: the page the QR on the business card opens. The same Apple-style
+ * monochrome as the approved look (assets/web/looks/2026-10-05-apple-monochrome.html) and the
+ * black card itself: black stages, light-grey pages, very large type, one product shot of a YSS
+ * system at work. Built for a phone in someone's hand at an event: no outside requests, the
+ * contact actions first.
+ */
+@font-face {
+  font-family: "Inter Tight";
+  src: url("inter-tight.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root {
+  --black: #000000;
+  --panel: #111113;
+  --paper: #f4f4f6;
+  --white: #ffffff;
+  --ink: #111113;
+  --ink-2: #3a3a3f;
+  --muted: #6c6c72;
+  --line: #dcdce0;
+  --on-dark: #f4f4f6;
+  --muted-dark: #a1a1a7;
+  --line-dark: #26262a;
+  --font: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--on-dark);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, ul, ol, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+h1, h2, h3 { font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; text-wrap: balance; }
+a { color: inherit; }
+::selection { background: var(--on-dark); color: var(--black); }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+.wrap { width: 100%; max-width: 1080px; margin-inline: auto; padding-inline: clamp(20px, 5vw, 40px); }
+.dark { background: var(--black); color: var(--on-dark); }
+.light { background: var(--paper); color: var(--ink); }
+.white { background: var(--white); color: var(--ink); }
+
+/* ---------- Top ---------- */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: calc(18px + env(safe-area-inset-top, 0px)); padding-bottom: 18px; }
+.mark { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.03em; text-decoration: none; }
+.mark span { font-weight: 500; color: var(--muted-dark); }
+.top small { font-size: 0.875rem; color: var(--muted-dark); }
+
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(40px, 9vw, 96px) clamp(56px, 9vw, 104px); overflow: hidden; }
+.hero h1 { max-width: 13ch; font-size: clamp(2.6rem, 1.3rem + 4.6vw, 4.75rem); }
+.hero .sub { max-width: 36ch; margin-top: 20px; font-size: clamp(1.125rem, 1.02rem + 0.5vw, 1.375rem); line-height: 1.45; color: var(--muted-dark); }
+.hero-grid { display: grid; gap: 40px; }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: end; gap: 56px; } }
+
+/* The contact: the one thing a scanner came for */
+.contact { padding: 22px; border: 1px solid var(--line-dark); border-radius: 24px; background: var(--panel); }
+.who { display: flex; align-items: center; gap: 14px; }
+.who .mono { display: grid; place-items: center; flex: none; width: 52px; height: 52px; border-radius: 50%; background: var(--on-dark); color: var(--black); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; }
+.who strong { display: block; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; }
+.who span { font-size: 0.9375rem; color: var(--muted-dark); }
+.actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  padding: 0 16px;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--on-dark);
+  font: 500 1rem/1 var(--font);
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: transform 0.3s var(--ease), background-color 0.3s, border-color 0.3s;
+}
+.btn:hover { border-color: #4a4a50; }
+.btn:active { transform: scale(0.97); }
+.btn.primary { grid-column: 1 / -1; border-color: var(--on-dark); background: var(--on-dark); color: var(--black); font-weight: 600; }
+.btn svg { flex: none; }
+.lines { display: grid; gap: 4px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line-dark); font-size: 0.9375rem; color: var(--muted-dark); }
+.lines span { user-select: all; }
+
+/* ---------- The product: a YSS system at work ---------- */
+.stage { margin-top: clamp(48px, 8vw, 88px); perspective: 1600px; }
+.device {
+  max-width: 980px;
+  margin-inline: auto;
+  padding: clamp(6px, 0.9vw, 11px);
+  border-radius: clamp(16px, 2vw, 24px);
+  background: linear-gradient(180deg, #2b2b2f, #101012);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.12), 0 50px 100px -50px rgb(0 0 0 / 0.9);
+  transform-origin: 50% 0;
+}
+.screen { overflow: hidden; border-radius: clamp(10px, 1.3vw, 15px); background: var(--white); color: var(--ink); }
+.app-main { display: flex; flex-direction: column; gap: 16px; padding: clamp(18px, 3vw, 36px); }
+.app-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.app-job { font-size: clamp(1.3rem, 1rem + 1.3vw, 2rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+.app-from { margin-top: 6px; font-family: var(--mono); font-size: 0.8125rem; color: var(--muted); }
+.app-state { display: inline-flex; flex: none; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: #f0f0f3; font-size: 0.8125rem; font-weight: 500; white-space: nowrap; }
+.app-state::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); }
+.app-state.run::before { animation: breathe 1.1s ease-in-out infinite; }
+@keyframes breathe { 50% { opacity: 0.2; } }
+.app-steps li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 6px 14px; padding-block: 14px; border-top: 1px solid #ececf0; transition: opacity 0.4s var(--ease), transform 0.4s var(--ease); }
+.app-steps li.wait { opacity: 0; transform: translateY(10px); }
+.app-steps time { font-family: var(--mono); font-size: 0.8125rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.st-label { min-width: 0; font-size: 1rem; }
+.bar { grid-column: 2; height: 3px; overflow: hidden; border-radius: 3px; background: #ececf0; }
+.bar i { display: block; height: 100%; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1); }
+.done .bar i { transform: scaleX(1); }
+.tick { display: grid; grid-row: 1 / span 2; grid-column: 3; place-items: center; width: 28px; height: 28px; border: 1.5px solid #d6d6db; border-radius: 50%; color: transparent; transition: background-color 0.3s, border-color 0.3s, color 0.3s; }
+.done .tick { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.js .done .tick { transition-delay: 0.85s; }
+.app-foot { display: flex; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid #ececf0; font-size: 0.8125rem; color: var(--muted); }
+
+/* ---------- Sections ---------- */
+.sec { padding-block: clamp(88px, 12vw, 152px); }
+.sec h2 { max-width: 16ch; font-size: clamp(2.1rem, 1.2rem + 3.6vw, 4rem); }
+.sec .lede { max-width: 40ch; margin-top: 16px; font-size: 1.1875rem; color: var(--muted); }
+.dark .lede { color: var(--muted-dark); }
+
+.jobs { margin-top: clamp(36px, 6vw, 64px); border-top: 1px solid var(--ink); }
+.jobs li { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-block: clamp(16px, 2.4vw, 24px); border-bottom: 1px solid var(--line); font-size: clamp(1.375rem, 1rem + 1.6vw, 2.25rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; }
+
+.tools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: clamp(32px, 5vw, 48px); }
+.tools li { padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; font-size: 1rem; font-weight: 500; }
+
+.steps { display: grid; margin-top: clamp(36px, 6vw, 64px); }
+@media (min-width: 900px) { .steps { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px; } }
+.steps li { padding-block: 22px; border-top: 1px solid var(--line-dark); }
+.steps h3 { font-size: 1.5rem; }
+.steps p { margin-top: 8px; font-size: 1rem; color: var(--muted-dark); }
+
+.close h2 { max-width: 15ch; font-size: clamp(2.4rem, 1.2rem + 4.6vw, 5rem); }
+.close h2 .soft { color: var(--muted); }
+.close .row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.close .btn { min-width: 168px; border-color: var(--ink); color: var(--ink); }
+.close .btn.primary { grid-column: auto; background: var(--ink); color: var(--white); }
+
+.foot { padding-block: 28px calc(28px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); font-size: 0.875rem; color: var(--muted); }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+
+/* ---------- Motion: only when the device allows it, and only once JavaScript is running ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1, .hero .sub, .contact { animation: rise 1.2s var(--ease) both; }
+  .hero .sub { animation-delay: 0.12s; }
+  .contact { animation-delay: 0.24s; }
+  .js .reveal { opacity: 0.001; transform: translateY(36px); transition: opacity 1s var(--ease), transform 1.1s var(--ease); }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @supports (animation-timeline: view()) {
+    .device { animation: upright linear both; animation-timeline: view(); animation-range: entry 0% cover 45%; }
+  }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(28px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes upright { from { transform: rotateX(24deg) scale(0.88); opacity: 0.6; } to { transform: none; opacity: 1; } }
+</style>
+</head>
+<body>
+
+<header class="dark">
+  <div class="wrap top">
+    <a class="mark" href="https://yssventures.com/card">YSS <span>Ventures</span></a>
+    <small>yssventures.com</small>
+  </div>
+</header>
+
+<main>
+  <section class="hero dark" aria-labelledby="title">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="title">Automation built around how your business actually works.</h1>
+        <p class="sub">We help growing businesses cut hours of manual work every week, without replacing the software they already use.</p>
+      </div>
+
+      <div class="contact" aria-label="Contact Shreyash Lokhande">
+        <div class="who">
+          <span class="mono" aria-hidden="true">SL</span>
+          <div><strong>Shreyash Lokhande</strong><span>CEO, YSS Ventures LLP</span></div>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="shreyash-lokhande.vcf" download="Shreyash Lokhande - YSS Ventures.vcf">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 16h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Save contact
+          </a>
+          <a class="btn" href="https://wa.me/919356432805?text=Hi%20Shreyash%2C%20I%20scanned%20your%20card." rel="noopener">WhatsApp</a>
+          <a class="btn" href="tel:+919356432805">Call</a>
+          <a class="btn" href="mailto:hello.yssventures@gmail.com?subject=Hello%20from%20your%20card" style="grid-column: 1 / -1">Email</a>
+        </div>
+        <div class="lines">
+          <span>+91 93564 32805</span>
+          <span>hello.yssventures@gmail.com</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage wrap">
+      <figure class="device" aria-label="Illustration: a YSS system working through its jobs">
+        <div class="screen">
+          <div class="app-main">
+            <div class="app-top">
+              <div>
+                <p class="app-job" id="job">Daily sales report</p>
+                <p class="app-from" id="from">from Tally · Excel / Google Sheets</p>
+              </div>
+              <span class="app-state" id="state">Report sent</span>
+            </div>
+            <ol class="app-steps" id="steps">
+              <li class="done"><time>09:00:02</time><span class="st-label">Sales figures gathered</span><span class="tick" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="bar"><i></i></span></li>
+              <li class="done"><time>09:00:06</time><span class="st-label">Totals matched across sources</span><span class="tick" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="bar"><i></i></span></li>
+              <li class="done"><time>09:00:09</time><span class="st-label">One report to management</span><span class="tick" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="bar"><i></i></span></li>
+            </ol>
+            <div class="app-foot"><span>Runs on its own</span><span>Illustration</span></div>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec light" aria-labelledby="work-title">
+    <div class="wrap">
+      <h2 class="reveal" id="work-title">Work we automate</h2>
+      <p class="lede reveal">The same tasks, repeated by hand every day, turned into systems that run on their own.</p>
+      <ul class="jobs reveal">
+        <li>Sales-order reports</li>
+        <li>Labour bills</li>
+        <li>Credit notes</li>
+        <li>Reconciliations</li>
+        <li>Attendance tracking</li>
+        <li>Management dashboards</li>
+        <li>Data between systems</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec white" aria-labelledby="tools-title">
+    <div class="wrap">
+      <h2 class="reveal" id="tools-title">Works with the software you already use.</h2>
+      <p class="lede reveal">Nothing to replace. We connect what you run today.</p>
+      <ul class="tools reveal">
+        <li>Tally</li>
+        <li>Excel</li>
+        <li>Google Sheets</li>
+        <li>Email</li>
+        <li>WhatsApp</li>
+        <li>Bank statements</li>
+        <li>Your own software</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec dark" aria-labelledby="how-title">
+    <div class="wrap">
+      <h2 class="reveal" id="how-title">From problem to production</h2>
+      <p class="lede reveal">What happens when you work with us.</p>
+      <ol class="steps">
+        <li class="reveal"><h3>Understand</h3><p>We study how the work is done today and find the bottlenecks.</p></li>
+        <li class="reveal"><h3>Design</h3><p>We design the system around your actual requirements.</p></li>
+        <li class="reveal"><h3>Build</h3><p>We develop, connect and test it.</p></li>
+        <li class="reveal"><h3>Deploy</h3><p>We put it into your real operating environment.</p></li>
+        <li class="reveal"><h3>Improve</h3><p>We refine and extend it as your needs change.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec light close" aria-labelledby="close-title">
+    <div class="wrap">
+      <h2 class="reveal" id="close-title"><span class="soft">Have a process that shouldn’t be this complicated?</span> Let’s fix it.</h2>
+      <p class="lede reveal">Tell us how the work is done today. We’ll show you what can run on its own.</p>
+      <div class="row reveal">
+        <a class="btn primary" href="https://wa.me/919356432805?text=Hi%20Shreyash%2C%20here%20is%20a%20task%20my%20team%20does%20by%20hand%3A%20" rel="noopener">Send a task on WhatsApp</a>
+        <a class="btn" href="shreyash-lokhande.vcf" download="Shreyash Lokhande - YSS Ventures.vcf">Save contact</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot light">
+  <div class="wrap"><span>YSS Ventures LLP</span><span>yssventures.com · hello.yssventures@gmail.com</span></div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add("js");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Sections come up as they reach the screen; everything is visible without JavaScript
+  var items = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    items.forEach(function (el, i) { el.style.transitionDelay = (el.closest(".steps") ? (i % 5) * 70 : 0) + "ms"; io.observe(el); });
+  }
+
+  // The screen works through five real jobs, one after another
+  if (reduce) return;
+  var jobs = [
+    { label: "Daily sales report", from: "Tally · Excel / Google Sheets", steps: ["Sales figures gathered", "Totals matched across sources", "One report to management"], times: ["09:00:02", "09:00:06", "09:00:09"], done: "Report sent" },
+    { label: "Reconciliation", from: "Bank statements · Tally", steps: ["Entries gathered", "Matched line by line", "Mismatches flagged for review"], times: ["10:30:01", "10:30:07", "10:30:12"], done: "Ready for review" },
+    { label: "Labour bills & credit notes", from: "Excel / Google Sheets", steps: ["Work and rates gathered", "Amounts and formats checked", "Bills and notes ready to send"], times: ["18:00:03", "18:00:08", "18:00:11"], done: "Ready to send" },
+    { label: "Attendance tracking", from: "Your own software", steps: ["Records gathered", "Gaps and overlaps checked", "Summary to the team lead"], times: ["19:00:01", "19:00:04", "19:00:06"], done: "Summary sent" },
+    { label: "Management dashboard", from: "Tally · Excel / Google Sheets", steps: ["Figures gathered", "Numbers cleaned and checked", "Dashboard refreshed"], times: ["08:00:02", "08:00:05", "08:00:07"], done: "Dashboard updated" }
+  ];
+  var jobEl = document.getElementById("job");
+  var fromEl = document.getElementById("from");
+  var stateEl = document.getElementById("state");
+  var rows = document.querySelectorAll("#steps li");
+  var n = 0;
+
+  function later(ms, fn) { return setTimeout(fn, ms); }
+  function run() {
+    var job = jobs[n];
+    jobEl.textContent = job.label;
+    fromEl.textContent = "from " + job.from;
+    stateEl.textContent = "Running";
+    stateEl.classList.add("run");
+    rows.forEach(function (row, k) {
+      row.classList.remove("done");
+      row.classList.add("wait");
+      row.querySelector("time").textContent = job.times[k];
+      row.querySelector(".st-label").textContent = job.steps[k];
+    });
+    rows.forEach(function (row, k) {
+      later(300 + k * 1400, function () { row.classList.remove("wait"); });
+      later(500 + k * 1400, function () { row.classList.add("done"); });
+    });
+    later(300 + rows.length * 1400, function () { stateEl.textContent = job.done; stateEl.classList.remove("run"); });
+    later(300 + rows.length * 1400 + 2600, function () { n = (n + 1) % jobs.length; run(); });
+  }
+  later(1800, run);
+})();
+</script>
+</body>
+</html>
