@@ -1,0 +1,136 @@
+/*
+ * /card: the landing page the business card's QR opens. Built on /assets/site.css (D-036 look).
+ * A finance-automation story told in moving text: the 30-second reel, the statement, the same work
+ * done by hand and by a system, what we automate, how it starts, the proof, and the contact.
+ */
+
+.card-hero h1 { max-width: 11ch; }
+.card-hero .sec-lede { max-width: 30ch; }
+.scroll-hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 40px; font-size: 0.9375rem; color: var(--muted-dark); }
+.scroll-hint svg { animation: nudge 1.8s var(--ease) infinite; }
+@keyframes nudge { 50% { transform: translateY(5px); } }
+@media (prefers-reduced-motion: reduce) { .scroll-hint svg { animation: none; } }
+
+/* ---------- The 30-second reel: live text in a phone-shaped frame ---------- */
+.reel-sec { padding-block: clamp(32px, 6vw, 64px) clamp(88px, 12vw, 140px); }
+.reel-box { position: relative; width: min(100%, 400px); margin: 28px auto 0; }
+.reel {
+  position: relative;
+  container-type: inline-size;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #000;
+  box-shadow: 0 0 0 1px var(--line-dark), 0 40px 80px -40px rgb(0 0 0 / 0.9);
+  aspect-ratio: 9 / 16;
+  color: var(--on-dark);
+  text-align: left;
+}
+.reel .s { position: absolute; inset: 0 8.9cqi; display: flex; flex-direction: column; justify-content: center; gap: 3.9cqi; }
+.reel .e { opacity: 0; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; will-change: transform, opacity, filter; }
+.reel .big { font-size: 10.3cqi; }
+.reel .mid { font-size: 8cqi; }
+.reel .soft { color: #8e8e94; }
+.reel .item { font-size: 7.2cqi; padding-bottom: 3cqi; border-bottom: 1px solid var(--line-dark); }
+.reel .rmark { position: absolute; left: 8.9cqi; top: 10cqi; font-size: 4.2cqi; font-weight: 700; letter-spacing: -0.03em; }
+.reel .rmark span { font-weight: 500; color: var(--muted-dark); }
+.reel .rsmall { font-size: 4.7cqi; font-weight: 500; color: var(--muted-dark); letter-spacing: -0.01em; }
+.reel .rnum { font-size: 6.9cqi; font-weight: 600; letter-spacing: -0.02em; }
+.reel .rfoot { position: absolute; left: 8.9cqi; right: 8.9cqi; bottom: 10cqi; display: flex; justify-content: space-between; font-size: 3.4cqi; color: #6c6c72; }
+.reel .bar-time { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--line-dark); }
+.reel .bar-time i { display: block; height: 100%; background: var(--on-dark); transform: scaleX(0); transform-origin: left; }
+.reel-btn {
+  position: absolute;
+  right: 12px;
+  bottom: 14px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line-dark);
+  border-radius: 50%;
+  background: rgb(17 17 19 / 0.85);
+  color: var(--on-dark);
+  cursor: pointer;
+}
+.reel-btn:focus-visible { outline: 2px solid var(--on-dark); outline-offset: 2px; }
+.reel-text { display: none; max-width: 30ch; margin: 28px auto 0; text-align: left; }
+.reel-text li { padding: 12px 0; border-top: 1px solid var(--line-dark); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; }
+html:not(.motion) .reel-box { display: none; }
+html:not(.motion) .reel-text { display: block; }
+
+/* ---------- The statement, lit word by word ---------- */
+.statement h2 { max-width: 16ch; margin-inline: auto; font-size: clamp(2.3rem, 1.2rem + 4.6vw, 5.25rem); }
+.statement .then { max-width: 24ch; margin: 28px auto 0; font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.3; }
+.w { display: inline-block; }
+
+/* ---------- By hand, and with a system ---------- */
+.versus { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(8px, 2vw, 24px); margin-top: clamp(40px, 6vw, 64px); }
+.pane { padding: clamp(20px, 3vw, 28px); border-radius: 24px; background: var(--paper); }
+.pane.auto { background: var(--ink); color: var(--on-dark); }
+.pane-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.pane-head h3 { font-size: 1.375rem; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--white); font-size: 0.8125rem; font-weight: 500; white-space: nowrap; }
+.pane.auto .chip { background: #1d1d20; }
+.chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.pane-sub { margin-top: 6px; font-size: 0.9375rem; color: var(--muted); }
+.pane.auto .pane-sub { color: var(--muted-dark); }
+.rows { margin-top: 18px; }
+.rows li { display: grid; grid-template-columns: 22px 1fr 2fr 1.2fr 24px; align-items: center; gap: 10px; height: 44px; border-top: 1px solid var(--line); }
+.pane.auto .rows li { border-top-color: var(--line-dark); }
+.rows .n { font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.rows .c { position: relative; height: 10px; overflow: hidden; border-radius: 5px; background: #e4e4e8; }
+.pane.auto .rows .c { background: #232327; }
+.rows .c i { position: absolute; inset: 0; border-radius: inherit; background: var(--ink-2); transform: scaleX(0); transform-origin: left; }
+.pane.auto .rows .c i { background: var(--on-dark); }
+.rows .ok { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: transparent; transition: background-color 0.3s, color 0.3s; }
+.rows li.filled .c i { transform: scaleX(1); }
+.rows li.filled .ok { background: var(--on-dark); color: var(--ink); }
+.pane.manual .rows li.filled .ok { background: var(--muted); color: var(--white); }
+.rows .caret { display: none; }
+.pane.manual .rows li.typing .caret { display: block; position: absolute; top: -3px; width: 2px; height: 16px; background: var(--ink); animation: blink 0.9s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.pane-foot { display: flex; justify-content: space-between; gap: 12px; margin-top: 14px; font-size: 0.875rem; color: var(--muted); }
+.pane.auto .pane-foot { color: var(--muted-dark); }
+.versus-note { margin-top: 14px; font-size: 0.875rem; color: var(--muted); text-align: right; }
+
+/* ---------- What we automate: big rows ---------- */
+.jobs { margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line-dark); }
+.jobs li { display: grid; gap: 6px; padding-block: clamp(22px, 3vw, 34px); border-bottom: 1px solid var(--line-dark); }
+@media (min-width: 900px) { .jobs li { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); align-items: baseline; gap: 48px; } }
+.jobs h3 { font-size: clamp(1.75rem, 1.2rem + 2.2vw, 3rem); }
+.jobs p { color: var(--muted-dark); font-size: 1.0625rem; }
+
+/* ---------- How it starts ---------- */
+.starts { position: relative; display: grid; gap: 32px; margin-top: clamp(40px, 6vw, 64px); padding-left: 40px; }
+.starts::before { content: ""; position: absolute; top: 12px; bottom: 12px; left: 6px; width: 2px; background: var(--line); }
+.starts::after { content: ""; position: absolute; top: 12px; bottom: 12px; left: 6px; width: 2px; background: var(--ink); transform: scaleY(var(--p, 1)); transform-origin: top; }
+.starts li { position: relative; z-index: 1; }
+.starts li::before { content: ""; position: absolute; top: 9px; left: -40px; width: 14px; height: 14px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 5px var(--paper); }
+.starts h3 { font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem); }
+.starts p { margin-top: 6px; color: var(--muted); }
+
+/* ---------- Proof ---------- */
+.proof { display: grid; gap: 24px; }
+@media (min-width: 900px) { .proof { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: end; } }
+.proof .name { font-size: clamp(2.6rem, 1.4rem + 4vw, 4.5rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.02; }
+.proof p { font-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem); color: var(--ink-2); }
+
+/* ---------- The ask ---------- */
+.ask h2 { max-width: 14ch; margin-inline: auto; font-size: clamp(2.4rem, 1.2rem + 4.6vw, 5rem); }
+.ask .btns { justify-content: center; margin-top: 36px; }
+.ask .btn { min-width: 160px; }
+
+/* Phones: the two panes stay side by side, so the difference is seen at a glance */
+@media (max-width: 599px) {
+  .pane { padding: 14px 12px; border-radius: 18px; }
+  .pane-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .pane-head h3 { font-size: 1.0625rem; }
+  .chip { padding: 4px 9px; font-size: 0.75rem; }
+  .pane-sub { display: none; }
+  .rows li { grid-template-columns: 1fr 1.6fr 20px; gap: 6px; height: 36px; }
+  .rows .n, .rows li > .c:nth-of-type(3) { display: none; }
+  .rows .ok { width: 20px; height: 20px; }
+  .pane-foot { flex-direction: column; gap: 2px; font-size: 0.75rem; }
+}

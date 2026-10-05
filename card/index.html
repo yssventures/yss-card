@@ -4,16 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shreyash Lokhande · YSS Ventures</title>
-<meta name="description" content="Thanks for scanning my card. Watch a 30-second hello, then save my number or call me.">
+<meta name="description" content="Thanks for scanning my card. We automate the finance work your team does by hand. Save my number or call me.">
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Shreyash Lokhande · YSS Ventures">
-<meta property="og:description" content="Thanks for scanning my card.">
+<meta property="og:description" content="We automate the finance work your team does by hand.">
 <meta property="og:url" content="https://yssventures.com/card/">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='700' font-size='15' fill='%23fff'%3EY%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="/assets/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="card.css">
 </head>
 <body>
 
@@ -25,24 +26,199 @@
 </header>
 
 <main>
+  <!-- 1. Thanks -->
   <section class="card-hero dark" aria-labelledby="title">
     <div class="wrap center">
       <h1 id="title">Thanks for scanning my card.</h1>
-      <p class="sec-lede">We automate the finance work your team does by hand. Here's a 30-second hello from me.</p>
-
-      <div class="video">
-        <video src="intro.mp4" poster="intro-poster.jpg" controls playsinline preload="metadata" aria-label="A 30-second introduction to YSS Ventures from Shreyash Lokhande"></video>
-      </div>
-
+      <p class="sec-lede">I'm Shreyash. We automate the finance work your team does by hand.</p>
       <div class="btns">
         <a class="btn primary" href="shreyash-lokhande.vcf" download="Shreyash Lokhande - YSS Ventures.vcf">
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 16h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Save my number
         </a>
         <a class="btn" href="tel:+919356432805">Call me</a>
-        <a class="btn" href="https://wa.me/919356432805?text=Hi%20Shreyash%2C%20I%20scanned%20your%20card." rel="noopener">WhatsApp me</a>
       </div>
+      <p class="scroll-hint">See how it works <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 2v10m0 0L3 8m4 4l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+    </div>
+  </section>
 
+  <!-- 2. The 30-second version, as moving text -->
+  <section class="reel-sec dark" aria-labelledby="reel-title">
+    <div class="wrap center">
+      <h2 class="sec-title reveal" id="reel-title" style="font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem)">In 30 seconds</h2>
+      <div class="reel-box">
+      <div class="reel" id="reel" aria-hidden="true">
+        <div class="rmark e" data-in="0.2" data-out="27.0">YSS <span>Ventures</span></div>
+        <div class="s">
+          <div class="e big soft" data-in="0.4" data-out="4.6">Right now, someone in your office</div>
+          <div class="e big" data-in="1.4" data-out="4.6">is copying numbers from one screen to another.</div>
+        </div>
+        <div class="s">
+          <div class="e big" data-in="5.0" data-out="9.2">I'm Shreyash, from YSS Ventures.</div>
+          <div class="e big soft" data-in="6.4" data-out="9.2">We build systems that do that copying for you.</div>
+        </div>
+        <div class="s">
+          <div class="e mid soft" data-in="9.6" data-out="17.6">We automate finance work:</div>
+          <div class="e item" data-in="10.6" data-out="17.6">Sales into Tally</div>
+          <div class="e item" data-in="11.8" data-out="17.6">Reconciliations</div>
+          <div class="e item" data-in="13.0" data-out="17.6">Sales reports</div>
+          <div class="e item" data-in="14.2" data-out="17.6">Labour bills and credit notes</div>
+        </div>
+        <div class="s">
+          <div class="e big" data-in="18.0" data-out="22.6">We see how your team does the work today,</div>
+          <div class="e big soft" data-in="19.4" data-out="22.6">then automate the parts that repeat.</div>
+        </div>
+        <div class="s">
+          <div class="e big soft" data-in="23.0" data-out="27.0">Think of one task your team does by hand every week.</div>
+          <div class="e big" data-in="24.6" data-out="27.0">Send it to me.</div>
+        </div>
+        <div class="s">
+          <div class="e big" data-in="27.4" data-out="31">YSS Ventures</div>
+          <div class="e rsmall" data-in="27.8" data-out="31">Finance automation</div>
+          <div class="e rnum" data-in="28.3" data-out="31">+91 93564 32805</div>
+        </div>
+        <div class="rfoot e" data-in="0.2" data-out="31"><span>yssventures.com</span><span>Shreyash Lokhande, CEO</span></div>
+        <div class="bar-time"><i></i></div>
+      </div>
+      <button class="reel-btn" id="reel-btn" type="button" aria-label="Pause" hidden></button>
+      </div>
+      <ol class="reel-text">
+        <li>Right now, someone in your office is copying numbers from one screen to another.</li>
+        <li>We build systems that do that copying for you.</li>
+        <li>Sales into Tally, reconciliations, sales reports, labour bills and credit notes.</li>
+        <li>We see how your team does the work today, then automate the parts that repeat.</li>
+        <li>Think of one task your team does by hand every week. Send it to me.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 3. The statement -->
+  <section class="sec light statement" aria-labelledby="st-title">
+    <div class="wrap center">
+      <h2 class="scrub" id="st-title">Right now, someone in your office is copying numbers from one screen to another.</h2>
+      <p class="then reveal">We build systems that do that copying for you.</p>
+    </div>
+  </section>
+
+  <!-- 4. The same work, by hand and by a system -->
+  <section class="sec white" aria-labelledby="vs-title">
+    <div class="wrap">
+      <h2 class="sec-title reveal" id="vs-title">The same work, two ways</h2>
+      <p class="sec-lede reveal">Sales from your marketplaces, entered into Tally.</p>
+      <div class="versus reveal">
+        <div class="pane manual" id="pane-manual">
+          <div class="pane-head"><h3>By hand</h3><span class="chip" id="chip-manual">Typing</span></div>
+          <p class="pane-sub">One row at a time, from one screen into another.</p>
+          <ol class="rows" aria-hidden="true">
+            <li><span class="n">1</span><span class="c"><i></i><span class="caret"></span></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"></span></li>
+            <li><span class="n">2</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"></span></li>
+            <li><span class="n">3</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"></span></li>
+            <li><span class="n">4</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"></span></li>
+            <li><span class="n">5</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"></span></li>
+            <li><span class="n">6</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"></span></li>
+          </ol>
+          <div class="pane-foot"><span id="count-manual">0 of 6 rows</span><span>Mistakes creep in</span></div>
+        </div>
+        <div class="pane auto" id="pane-auto">
+          <div class="pane-head"><h3>With a YSS system</h3><span class="chip" id="chip-auto">Running</span></div>
+          <p class="pane-sub">Collected, entered and checked, on its own.</p>
+          <ol class="rows" aria-hidden="true">
+            <li><span class="n">1</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+            <li><span class="n">2</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+            <li><span class="n">3</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+            <li><span class="n">4</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+            <li><span class="n">5</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+            <li><span class="n">6</span><span class="c"><i></i></span><span class="c"><i></i></span><span class="c"><i></i></span><span class="ok"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+          </ol>
+          <div class="pane-foot"><span>Every row recorded</span><span>Checked the next day</span></div>
+        </div>
+      </div>
+      <p class="versus-note">Illustration</p>
+    </div>
+  </section>
+
+  <!-- 5. What we automate -->
+  <section class="sec dark" aria-labelledby="jobs-title">
+    <div class="wrap">
+      <h2 class="sec-title reveal" id="jobs-title">What we automate</h2>
+      <ul class="jobs">
+        <li class="reveal"><h3>Sales into Tally</h3><p>Orders from marketplaces and your order system become Tally entries, without anyone typing them.</p></li>
+        <li class="reveal"><h3>TDS reconciliation</h3><p>TDS and marketplace records checked against what is in Tally.</p></li>
+        <li class="reveal"><h3>Sales-order reports</h3><p>Pulled from Tally, for each of your units.</p></li>
+        <li class="reveal"><h3>Bills and records</h3><p>Labour bills, credit notes and attendance, prepared from the records you already keep.</p></li>
+      </ul>
+
+      <div class="stage">
+        <figure class="device" aria-label="Illustration: a YSS system working through finance jobs">
+          <div class="screen">
+            <div class="app">
+              <aside class="app-side" aria-hidden="true">
+                <p class="app-brand">YSS system</p>
+                <ul class="app-jobs" id="jobs">
+                  <li class="on">Sales into Tally</li>
+                  <li>TDS reconciliation</li>
+                  <li>Sales-order report</li>
+                  <li>Labour bills &amp; credit notes</li>
+                  <li>Attendance tracking</li>
+                </ul>
+              </aside>
+              <div class="app-main">
+                <div class="app-top">
+                  <div>
+                    <p class="app-job" id="job">Sales into Tally</p>
+                    <p class="app-from" id="from">from Amazon · Flipkart · Myntra · order system</p>
+                  </div>
+                  <span class="app-state" id="state">Posted</span>
+                </div>
+                <ol class="app-steps" id="steps">
+                  <li class="done"><time>06:00:02</time><span class="st-label">Orders collected from each channel</span><span class="tick" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="bar"><i></i></span></li>
+                  <li class="done"><time>06:00:41</time><span class="st-label">Tally entries built and posted</span><span class="tick" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="bar"><i></i></span></li>
+                  <li class="done"><time>06:01:07</time><span class="st-label">Next-day check against Tally</span><span class="tick" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="bar"><i></i></span></li>
+                </ol>
+                <div class="app-foot"><span>Runs on its own</span><span>Illustration</span></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. How it starts -->
+  <section class="sec light" aria-labelledby="starts-title">
+    <div class="wrap narrow">
+      <h2 class="sec-title reveal" id="starts-title">How it starts</h2>
+      <ol class="starts">
+        <li class="reveal"><h3>You show us the work</h3><p>How it is done today, with a few real examples.</p></li>
+        <li class="reveal"><h3>We tell you what can run on its own</h3><p>And you get a written proposal with a timeline.</p></li>
+        <li class="reveal"><h3>Nothing starts until you say yes</h3><p>The first conversation is free.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7. Proof -->
+  <section class="sec white" aria-labelledby="proof-title">
+    <div class="wrap proof">
+      <div>
+        <p class="sec-lede" style="margin-top: 0">Built for</p>
+        <h2 class="name grow" id="proof-title">Nasher Miles</h2>
+      </div>
+      <div class="reveal">
+        <p>Their sales from Amazon, Flipkart, Myntra and an order system reach Tally as entries, without anyone typing them. A day later, the raw sales data is checked against Tally.</p>
+        <p style="margin-top: 16px"><a class="more" href="/#work">Read the case study <svg width="10" height="16" viewBox="0 0 10 16" fill="none" aria-hidden="true"><path d="M2 2l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. The ask -->
+  <section class="sec dark ask" aria-labelledby="ask-title">
+    <div class="wrap center">
+      <h2 class="grow" id="ask-title">Think of one task your team does by hand. Send it to me.</h2>
+      <div class="btns">
+        <a class="btn primary" href="shreyash-lokhande.vcf" download="Shreyash Lokhande - YSS Ventures.vcf">Save my number</a>
+        <a class="btn" href="tel:+919356432805">Call me</a>
+        <a class="btn" href="https://wa.me/919356432805?text=Hi%20Shreyash%2C%20I%20scanned%20your%20card.%20Here%20is%20a%20task%20my%20team%20does%20by%20hand%3A%20" rel="noopener">WhatsApp me</a>
+      </div>
       <div class="who">
         <strong>Shreyash Lokhande</strong>
         <span>CEO, YSS Ventures</span>
@@ -51,8 +227,6 @@
           <span>hello.yssventures@gmail.com</span>
         </div>
       </div>
-
-      <p style="margin-top: 32px"><a class="more" href="/">See what we do <svg width="10" height="16" viewBox="0 0 10 16" fill="none" aria-hidden="true"><path d="M2 2l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
     </div>
   </section>
 </main>
@@ -62,5 +236,8 @@
 </footer>
 
 <script src="/assets/site.js"></script>
+<script src="/assets/vendor/gsap.min.js"></script>
+<script src="/assets/vendor/ScrollTrigger.min.js"></script>
+<script src="card.js"></script>
 </body>
 </html>
