@@ -1,6 +1,6 @@
 /*
  * /card: the landing page the business card's QR opens. Built on /assets/site.css (D-036 look).
- * A finance-automation story told in moving text: the 30-second reel, the statement, the same work
+ * A finance-automation story told in moving text: the statement, the same work
  * done by hand and by a system, what we automate, how it starts, the proof, and the contact.
  */
 
@@ -10,55 +10,6 @@
 .scroll-hint svg { animation: nudge 1.8s var(--ease) infinite; }
 @keyframes nudge { 50% { transform: translateY(5px); } }
 @media (prefers-reduced-motion: reduce) { .scroll-hint svg { animation: none; } }
-
-/* ---------- The 30-second reel: live text in a phone-shaped frame ---------- */
-.reel-sec { padding-block: clamp(32px, 6vw, 64px) clamp(88px, 12vw, 140px); }
-.reel-box { position: relative; width: min(100%, 400px); margin: 28px auto 0; }
-.reel {
-  position: relative;
-  container-type: inline-size;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 28px;
-  background: #000;
-  box-shadow: 0 0 0 1px var(--line-dark), 0 40px 80px -40px rgb(0 0 0 / 0.9);
-  aspect-ratio: 9 / 16;
-  color: var(--on-dark);
-  text-align: left;
-}
-.reel .s { position: absolute; inset: 0 8.9cqi; display: flex; flex-direction: column; justify-content: center; gap: 3.9cqi; }
-.reel .e { opacity: 0; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; will-change: transform, opacity, filter; }
-.reel .big { font-size: 10.3cqi; }
-.reel .mid { font-size: 8cqi; }
-.reel .soft { color: #8e8e94; }
-.reel .item { font-size: 7.2cqi; padding-bottom: 3cqi; border-bottom: 1px solid var(--line-dark); }
-.reel .rmark { position: absolute; left: 8.9cqi; top: 10cqi; font-size: 4.2cqi; font-weight: 700; letter-spacing: -0.03em; }
-.reel .rmark span { font-weight: 500; color: var(--muted-dark); }
-.reel .rsmall { font-size: 4.7cqi; font-weight: 500; color: var(--muted-dark); letter-spacing: -0.01em; }
-.reel .rnum { font-size: 6.9cqi; font-weight: 600; letter-spacing: -0.02em; }
-.reel .rfoot { position: absolute; left: 8.9cqi; right: 8.9cqi; bottom: 10cqi; display: flex; justify-content: space-between; font-size: 3.4cqi; color: #6c6c72; }
-.reel .bar-time { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--line-dark); }
-.reel .bar-time i { display: block; height: 100%; background: var(--on-dark); transform: scaleX(0); transform-origin: left; }
-.reel-btn {
-  position: absolute;
-  right: 12px;
-  bottom: 14px;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--line-dark);
-  border-radius: 50%;
-  background: rgb(17 17 19 / 0.85);
-  color: var(--on-dark);
-  cursor: pointer;
-}
-.reel-btn:focus-visible { outline: 2px solid var(--on-dark); outline-offset: 2px; }
-.reel-text { display: none; max-width: 30ch; margin: 28px auto 0; text-align: left; }
-.reel-text li { padding: 12px 0; border-top: 1px solid var(--line-dark); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; }
-html:not(.motion) .reel-box { display: none; }
-html:not(.motion) .reel-text { display: block; }
 
 /* ---------- The statement, lit word by word ---------- */
 .statement h2 { max-width: 16ch; margin-inline: auto; font-size: clamp(2.3rem, 1.2rem + 4.6vw, 5.25rem); }

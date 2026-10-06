@@ -15,50 +15,6 @@
     }, { rootMargin: margin || "0px" }).observe(el);
   }
 
-  // ---------- The 30-second reel: each line eases in and out on its own clock ----------
-  var reel = document.getElementById("reel");
-  if (reel) {
-    var els = reel.querySelectorAll(".e");
-    var bar = reel.querySelector(".bar-time i");
-    var btn = document.getElementById("reel-btn");
-    var LEN = 30, t = 0, last = null, playing = false, visible = false, raf = null;
-    var ease = function (x) { x = Math.min(Math.max(x, 0), 1); return 1 - Math.pow(1 - x, 3); };
-    var draw = function () {
-      els.forEach(function (el) {
-        var pin = ease((t - +el.dataset.in) / 0.6);
-        var pout = ease((t - +el.dataset.out) / 0.45);
-        var o = pin * (1 - pout);
-        el.style.opacity = o.toFixed(3);
-        el.style.transform = "translateY(" + ((1 - pin) * 26 - pout * 18).toFixed(1) + "px)";
-        el.style.filter = o > 0.98 ? "none" : "blur(" + ((1 - o) * 7).toFixed(1) + "px)";
-      });
-      bar.style.transform = "scaleX(" + (t / LEN).toFixed(4) + ")";
-    };
-    var tick = function (now) {
-      if (last !== null) t = (t + (now - last) / 1000) % LEN;
-      last = now;
-      draw();
-      raf = requestAnimationFrame(tick);
-    };
-    var setPlaying = function (on) {
-      playing = on;
-      btn.setAttribute("aria-label", on ? "Pause" : "Play");
-      btn.innerHTML = on
-        ? '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" rx="1" fill="currentColor"/></svg>'
-        : '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9.5-5.5z" fill="currentColor"/></svg>';
-      run();
-    };
-    var run = function () {
-      if (playing && visible && raf === null) { last = null; raf = requestAnimationFrame(tick); }
-      if ((!playing || !visible) && raf !== null) { cancelAnimationFrame(raf); raf = null; }
-    };
-    btn.hidden = false;
-    btn.addEventListener("click", function () { setPlaying(!playing); });
-    draw();
-    setPlaying(true);
-    inView(reel, function () { visible = true; run(); }, function () { visible = false; run(); });
-  }
-
   // ---------- By hand, and with a system: the same rows, two speeds ----------
   var manual = document.getElementById("pane-manual");
   var auto = document.getElementById("pane-auto");
