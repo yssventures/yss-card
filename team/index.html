@@ -18,8 +18,6 @@
   /* Team grid; colours and type come from site.css tokens only. */
   .team-head { padding-block: clamp(56px, 8vw, 112px) 0; }
   .team-head h1 { font-size: clamp(2.4rem, 1.4rem + 3.6vw, 4rem); }
-  .group { margin-top: clamp(32px, 5vw, 56px); overflow: hidden; border-radius: 20px; }
-  .group img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 30%; }
   .people { display: grid; gap: clamp(32px, 4vw, 48px) 24px; padding-block: clamp(56px, 8vw, 96px) clamp(88px, 12vw, 160px); }
   @media (min-width: 560px) { .people { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (min-width: 900px) { .people { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
@@ -50,7 +48,6 @@
   <div class="wrap team-head">
     <h1>Our team</h1>
     <p class="sec-lede">A small team in Mumbai that builds finance automation for businesses.</p>
-    <figure class="group"><img src="/assets/work/team.jpg" alt="The YSS Ventures team at work in the office" width="1104" height="736"></figure>
   </div>
 
   <div class="wrap people">
