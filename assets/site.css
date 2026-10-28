@@ -71,10 +71,17 @@ a { color: inherit; }
 .nav-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 56px; }
 .mark { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.03em; text-decoration: none; white-space: nowrap; }
 .mark span { font-weight: 500; color: var(--muted-dark); }
-.nav-links { display: none; gap: 4px; }
-.nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; font-size: 0.9375rem; color: var(--muted-dark); text-decoration: none; transition: color 0.3s; }
-.nav-links a:hover { color: var(--on-dark); }
-@media (min-width: 860px) { .nav-links { display: flex; } }
+.nav-links { display: flex; gap: 4px; }
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; font-size: 0.9375rem; color: var(--muted-dark); text-decoration: none; white-space: nowrap; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--on-dark); }
+/* Phones: the links sit on a second row that scrolls sideways, so every section stays one tap away. */
+@media (max-width: 859px) {
+  html { scroll-padding-top: 116px; }
+  .nav-in { flex-wrap: wrap; height: auto; padding-top: 6px; row-gap: 0; }
+  .nav-links { order: 3; flex-basis: 100%; overflow-x: auto; scrollbar-width: none; margin: 0 -12px; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { padding: 0 10px; font-size: 0.875rem; }
+}
 
 /* ---------- Buttons ---------- */
 .btn {
